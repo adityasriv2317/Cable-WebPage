@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cable - Welcome to the Grid</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Rajdhani:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./app.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Custom Cursor -->
+    <div id="custom-cursor"></div>
+
+    <!-- Interactive Background -->
+    <div id="interactive-bg">
+      <div id="cursor-glow"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress-container">
+      <div id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Header -->
+    <header
+      id="header"
+      class="bg-black/50 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/10"
+    >
+      <!-- Responsive container -->
+      <div
+        class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
+      >
+        <h1
+          class="text-3xl sm:text-4xl font-cyber-title tracking-tighter text-white glitch-text-hover cursor-none"
+        >
+          CABLE
+        </h1>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8 text-lg">
+          <a
+            href="#features"
+            class="nav-link text-gray-300 hover:text-yellow-300 transition-colors"
+            >Features</a
+          >
+          <a
+            href="#manual"
+            id="nav-manual"
+            class="nav-link text-gray-300 hover:text-yellow-300 transition-colors cursor-none"
+            >Manual</a
+          >
+          <a
+            href="#docs"
+            id="nav-docs"
+            class="nav-link text-gray-300 hover:text-yellow-300 transition-colors cursor-none"
+            >Dev_Docs</a
+          >
+        </nav>
+        <button class="hidden md:block cyber-btn py-2 px-6">
+          DOWNLOAD_GRID
+        </button>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-white">
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-black/80">
+        <a
+          href="#features"
+          class="block text-center py-3 px-4 text-lg hover:bg-yellow-400 hover:text-black"
+          >Features</a
+        >
+        <a
+          href="#manual"
+          id="mobile-nav-manual"
+          class="block text-center py-3 px-4 text-lg hover:bg-yellow-400 hover:text-black cursor-none"
+          >Manual</a
+        >
+        <a
+          href="#docs"
+          id="mobile-nav-docs"
+          class="block text-center py-3 px-4 text-lg hover:bg-yellow-400 hover:text-black cursor-none"
+          >Dev_Docs</a
+        >
+        <div class="p-4">
+          <button class="w-full cyber-btn py-3 px-5 text-lg">
+            DOWNLOAD_GRID
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="min-h-screen flex items-center justify-center text-center px-4 pt-24"
+      >
+        <div class="max-w-4xl">
+          <!-- Responsive font sizes -->
+          <h2
+            class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-cyber-title glitch-text-hover tracking-tighter text-white mb-4"
+            style="animation-delay: 0.2s"
+          >
+            <span class="text-yellow-300 glitch-text">CABLE</span>
+          </h2>
+          <p
+            class="text-lg sm:text-xl md:text-3xl text-cyan-300 mb-8 slide-up"
+            style="animation-delay: 0.4s"
+          >
+            JACK IN. LOAD UP. TAKE CONTROL.
+          </p>
+          <p
+            class="max-w-2xl mx-auto text-base sm:text-lg text-gray-300 mb-10 slide-up"
+            style="animation-delay: 0.6s"
+          >
+            In the neon-drenched arenas of the future, only the fastest and most
+            precise net-runners survive. CABLE is a high-octane multiplayer FPS
+            where your skill is the ultimate currency.
+          </p>
+          <!-- Responsive button layout -->
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10"
+          >
+            <button
+              class="cyber-btn py-3 px-8 sm:py-4 sm:px-10 text-lg sm:text-xl hero-btn-anim"
+              style="animation-delay: 0.8s"
+            >
+              ENTER THE ARENA
+            </button>
+            <a
+              href="#features"
+              class="cyber-btn-secondary py-3 px-8 sm:py-4 sm:px-10 text-lg sm:text-xl hero-btn-anim"
+              style="animation-delay: 1s"
+            >
+              // KNOW MORE
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content Area -->
+      <div
+        id="main-content"
+        class="container mx-auto px-4 sm:px-6 lg:px-8 py-20"
+      >
+        <!-- Features Section -->
+        <section id="features" class="content-section active pt-32">
+          <div class="text-center mb-12 sm:mb-16">
+            <h3
+              class="text-4xl sm:text-5xl font-bold mb-2 font-cyber-title cyber-h-glow"
+            >
+              SYSTEM_FEATURES
+            </h3>
+            <p class="text-gray-400 text-lg sm:text-xl">
+              // The core components of your combat suite.
+            </p>
+          </div>
+          <!-- Responsive grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature Cards with Icons -->
+            <div class="feature-card p-6 sm:p-8 slide-up text-center">
+              <svg
+                class="w-12 h-12 mx-auto mb-4 text-cyan-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h1a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.7 16.95l.007-.007M16.3 16.95l.007-.007M12 20.95l.007-.007M12 8V4m0 4h.01M12 4h.01M4 4h.01M4 8h.01M20 4h.01M20 8h.01M4 12h.01M20 12h.01M4 16h.01M20 16h.01"
+                ></path>
+              </svg>
+              <h4
+                class="text-2xl sm:text-3xl font-bold mb-4 font-cyber-title text-yellow-300"
+              >
+                Hyper-Sync Combat
+              </h4>
+              <p class="text-gray-300">
+                Seamless, low-latency multiplayer action powered by Photon's
+                quantum-entangled servers.
+              </p>
+            </div>
+            <div
+              class="feature-card p-6 sm:p-8 slide-up text-center"
+              style="animation-delay: 0.1s"
+            >
+              <svg
+                class="w-12 h-12 mx-auto mb-4 text-cyan-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+              <h4
+                class="text-2xl sm:text-3xl font-bold mb-4 font-cyber-title text-yellow-300"
+              >
+                Modular Arenas
+              </h4>
+              <p class="text-gray-300">
+                Battle across shifting digital landscapes, from rain-slicked
+                rooftops to glitched-out data vaults.
+              </p>
+            </div>
+            <div
+              class="feature-card p-6 sm:p-8 slide-up text-center"
+              style="animation-delay: 0.2s"
+            >
+              <svg
+                class="w-12 h-12 mx-auto mb-4 text-cyan-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                ></path>
+              </svg>
+              <h4
+                class="text-2xl sm:text-3xl font-bold mb-4 font-cyber-title text-yellow-300"
+              >
+                Customizable RIGS
+              </h4>
+              <p class="text-gray-300">
+                Forge your identity with custom callsigns and selectable chassis
+                to stand out in the battlefield.
+              </p>
+            </div>
+            <div
+              class="feature-card p-6 sm:p-8 slide-up text-center"
+              style="animation-delay: 0.3s"
+            >
+              <svg
+                class="w-12 h-12 mx-auto mb-4 text-cyan-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                ></path>
+              </svg>
+              <h4
+                class="text-2xl sm:text-3xl font-bold mb-4 font-cyber-title text-yellow-300"
+              >
+                Encrypted Comms
+              </h4>
+              <p class="text-gray-300">
+                Coordinate your squad with a secure, real-time chat link. Plan
+                your attack, celebrate your frags.
+              </p>
+            </div>
+            <div
+              class="feature-card p-6 sm:p-8 slide-up text-center"
+              style="animation-delay: 0.4s"
+            >
+              <svg
+                class="w-12 h-12 mx-auto mb-4 text-cyan-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                ></path>
+              </svg>
+              <h4
+                class="text-2xl sm:text-3xl font-bold mb-4 font-cyber-title text-yellow-300"
+              >
+                Hot-Swap Hardware
+              </h4>
+              <p class="text-gray-300">
+                Adapt your loadout on the fly. Pick up and interface with a
+                deadly arsenal of firearms.
+              </p>
+            </div>
+            <div
+              class="feature-card p-6 sm:p-8 slide-up text-center"
+              style="animation-delay: 0.5s"
+            >
+              <svg
+                class="w-12 h-12 mx-auto mb-4 text-cyan-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+              <h4
+                class="text-2xl sm:text-3xl font-bold mb-4 font-cyber-title text-yellow-300"
+              >
+                Network Hub
+              </h4>
+              <p class="text-gray-300">
+                A streamlined lobby system to find your crew, create private
+                rooms, and launch into the action.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- User Manual Section -->
+        <section id="manual" class="content-section">
+          <div class="max-w-4xl mx-auto">
+            <h3
+              class="text-4xl sm:text-5xl font-bold mb-8 text-center font-cyber-title cyber-h-glow"
+            >
+              OPERATOR_MANUAL
+            </h3>
+            <div
+              class="space-y-8 bg-black/30 p-6 sm:p-8 border border-magenta-500/20"
+            >
+              <div>
+                <h4
+                  class="text-2xl sm:text-3xl font-bold mb-2 text-yellow-300 font-cyber-title"
+                >
+                  // INITIALIZATION
+                </h4>
+                <p>
+                  Launch `CABLE.exe`. The primary interface will connect you to
+                  the Grid. Set your callsign in the designated field. From the
+                  server browser, select an open combat simulation or create
+                  your own private room.
+                </p>
+              </div>
+              <div>
+                <h4
+                  class="text-2xl sm:text-3xl font-bold mb-2 text-yellow-300 font-cyber-title"
+                >
+                  // I/O CONTROLS
+                </h4>
+                <ul class="list-none space-y-2 text-lg text-gray-200">
+                  <li>
+                    <span class="text-cyan-400 font-bold">LOCOMOTION:</span> W,
+                    A, S, D
+                  </li>
+                  <li>
+                    <span class="text-cyan-400 font-bold">AIM:</span>
+                    MOUSE_INPUT
+                  </li>
+                  <li>
+                    <span class="text-cyan-400 font-bold">FIRE_WEAPON:</span>
+                    MOUSE_BTN_1
+                  </li>
+                  <li>
+                    <span class="text-cyan-400 font-bold">CHAT_INTERFACE:</span>
+                    ENTER/RETURN
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4
+                  class="text-2xl sm:text-3xl font-bold mb-2 text-yellow-300 font-cyber-title"
+                >
+                  // COMBAT_PROTOCOL
+                </h4>
+                <p>
+                  Objective: De-rez opposing operators. Your structural
+                  integrity (health) is monitored on your HUD. System failure
+                  (health at 0) results in a temporary de-rez, followed by a
+                  reboot at a random grid coordinate. Your starting hardware is
+                  basic; superior hardware must be acquired on-site.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Developer Docs Section -->
+        <section id="docs" class="content-section">
+          <div class="max-w-4xl mx-auto">
+            <h3
+              class="text-4xl sm:text-5xl font-bold mb-8 text-center font-cyber-title cyber-h-glow"
+            >
+              DEV_CONSOLE
+            </h3>
+            <div
+              class="space-y-12 bg-black/30 p-6 sm:p-8 border border-cyan-500/20"
+            >
+              <div>
+                <h4
+                  class="text-2xl sm:text-3xl font-bold mb-4 text-cyan-400 font-cyber-title"
+                >
+                  // CORE_MODULES
+                </h4>
+                <p class="mb-4">
+                  System architecture is modular for efficient debugging and
+                  expansion.
+                </p>
+                <ul class="space-y-3 text-lg">
+                  <li>
+                    <strong class="text-yellow-400">LobbyManager:</strong>
+                    Manages Photon server handshake, room instantiation, and
+                    player identity (`NickName`).
+                  </li>
+                  <li>
+                    <strong class="text-yellow-400">WeaponManager:</strong>
+                    Syncs weapon state across the network using
+                    `RPC_EquipWeapon`.
+                  </li>
+                  <li>
+                    <strong class="text-yellow-400">Shooting:</strong> Handles
+                    client-side raycasting and triggers network-wide VFX via
+                    `RPC_PlayMuzzleFlash`.
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4
+                  class="text-2xl sm:text-3xl font-bold mb-4 text-cyan-400 font-cyber-title"
+                >
+                  // WEAPON_SYNC_LOGIC
+                </h4>
+                <p class="mb-2">
+                  Weapon equipping is broadcast to all clients to ensure visual
+                  consistency. The master client's state is law.
+                </p>
+                <pre><code>
+[PunRPC]
+void RPC_EquipWeapon(string weaponName)
+{
+    if (currentWeapon != null) { Destroy(currentWeapon); }
+    GameObject newWeapon = Instantiate(Resources.Load&lt;GameObject&gt;(weaponName), weaponHolder.position, weaponHolder.rotation);
+    newWeapon.transform.SetParent(weaponHolder);
+    currentWeapon = newWeapon;
+}
+                            </code></pre>
+              </div>
+
+              <div>
+                <h4
+                  class="text-2xl sm:text-3xl font-bold mb-4 text-cyan-400 font-cyber-title"
+                >
+                  // VFX_BROADCAST
+                </h4>
+                <p class="mb-2">
+                  Visual effects like muzzle flash are triggered via an `All`
+                  RPC call. This is efficient as it doesn't require constant
+                  state synchronization, only a one-time event broadcast.
+                </p>
+                <pre><code>
+void Shoot()
+{
+    // ...
+    photonView.RPC("RPC_PlayMuzzleFlash", RpcTarget.All);
+    // ...
+}
+
+[PunRPC]
+void RPC_PlayMuzzleFlash()
+{
+    currentWeapon?.muzzleFlash?.Play();
+}
+                            </code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 border-t border-white/10 mt-20 pt-12 pb-8">
+      <div class="container mx-auto px-6 text-center">
+        <h4 class="text-3xl font-bold mb-4 font-cyber-title text-yellow-300">
+          JOIN THE GRID
+        </h4>
+        <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+          Follow our transmission for the latest updates, patch notes, and
+          community events. Don't get left in the digital dust.
+        </p>
+        <div class="flex justify-center space-x-6 mb-8">
+          <a
+            href="#"
+            class="text-gray-400 hover:text-yellow-300 transition-transform hover:scale-110"
+            title="GitHub"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              role="img"
+              class="w-8 h-8"
+              role="img"
+              viewBox="0 0 24 24"
+              aria-labelledby="github-logo"
+            >
+              <title id="github-logo-title">GitHub Logo</title>
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="text-gray-400 hover:text-yellow-300 transition-transform hover:scale-110"
+            title="YouTube"
+          >
+            <svg
+              class="w-8 h-8"
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+        <p class="text-gray-500 text-sm">
+          &copy; 2025 Cable // A fictional game for demonstration purposes. //
+          All rights reserved by the net-runners.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button
+      id="scrollTopBtn"
+      title="Back to Top"
+      class="fixed bottom-8 right-8 z-50 w-12 h-12 cyber-btn p-0 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:scale-110"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="3"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5 15l7-7 7 7"
+        />
+      </svg>
+    </button>
+
+    <!-- <script></script> -->
+  </body>
+</html>
